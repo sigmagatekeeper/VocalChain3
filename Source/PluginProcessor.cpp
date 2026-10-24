@@ -142,7 +142,7 @@ void VocalChainProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer&)
     }
 
     dsp::AudioBlock<float> block (buffer);
-    auto sub = block.getSubsetChannelRange (0, (size_t) nch);
+auto sub = block.getSubsetChannelBlock (0, (size_t) nch);
     dsp::ProcessContextReplacing<float> ctx (sub);
 
     // 2) EQ 1 (Cleanup)
